@@ -48,7 +48,7 @@ def count_down(count):
         count_sec = f"0{count_sec}"
     canvas.itemconfig(time_counter, text= f"{count_min} : {count_sec}")
     if count > 0:
-        timer_n = window.after(100, count_down, count-1)
+        timer_n = window.after(1000, count_down, count-1)
     else:
         start_counting()
         mark = ""
@@ -64,7 +64,7 @@ window.config(padx= 200, pady= 100, bg=YELLOW)
 
 canvas = Canvas(width= 200, height= 224, bg= YELLOW, highlightthickness=0)
 pomodoro_img = PhotoImage(file= "tomato.png")
-canvas.create_image(1000, 112, image= pomodoro_img)
+canvas.create_image(100, 112, image= pomodoro_img)
 time_counter = canvas.create_text(100, 112, text= "00:00", font= (FONT_NAME, 35, "bold"), fill= "white")
 canvas.grid(column=2, row= 2)
 
